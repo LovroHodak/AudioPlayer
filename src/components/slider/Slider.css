@@ -1,0 +1,45 @@
+.slider-container {
+  border: 2px solid red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* INPUT field */
+input[type="range"] {
+  height: 28px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 80%;
+}
+/* input[type="range"]:focus {
+  outline: none;
+} */
+/* TRACK line */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071a9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+/* MOVING THUMB */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  /* because -webkit-appearance: none, 
+  I can put custom width and height */
+  height: 20px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -6px;
+}
+/* input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #3071a9;
+} */
