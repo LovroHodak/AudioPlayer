@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./Slider.css";
-import { usePercentage } from "../../hooks/use-percentage";
 
-export default function Slider() {
-  const { percentage, onChange } = usePercentage();
+export default function Slider({onChange, percentage}) {
 
   // initially input value is position but maybe i dont need it and can leave it as percentage
   /* const [position, setPosition] = useState(0);

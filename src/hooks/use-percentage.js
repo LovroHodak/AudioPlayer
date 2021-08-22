@@ -9,6 +9,8 @@ export function PercentageProvider(props) {
       setPercentage(e.target.value);
     };
 
+    
+
     return (
         <PercentageContext.Provider value={{percentage, setPercentage, onChange}} >
             {props.children}
