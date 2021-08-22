@@ -33,11 +33,30 @@ function App() {
     }
   }
 
+  const getCurrentDuration = (e) => {
+    const percent = ((e.currentTarget.currentTime / e.currentTarget.duration) * 100).toFixed(2)
+    const time = e.currentTarget.currentTime;
+
+    setPercentage(+percent);
+    setCurrentTime(time.toFixed(2));
+  }
+
   return (
     <div className="App">
       <h1>AudioPlayer Component</h1>
       <Slider onChange={onChange} percentage={percentage} />
-      <audio ref={audioRef} src={song} />
+      <audio
+        ref={audioRef}
+        src={song}
+        onLoadedData={(e) => {
+          console.log(e.currentTarget.duration);
+          setDuration(e.currentTarget.duration.toFixed(2));
+        }}
+        // onTimeUpdate={(e) => {
+        //   console.log(e.currentTarget.currentTime);
+        // }}
+        onTimeUpdate={getCurrentDuration}
+      />
       <button onClick={playSong}>Play</button>
     </div>
   );
